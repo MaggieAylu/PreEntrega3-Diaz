@@ -39,7 +39,7 @@ const carritoContenido = document.getElementById('carrito-contenido')
 
 verCarrito.addEventListener('click', () => {
     carritoContenido.innerHTML = ''
-    carritoContenido.classList.add('carrito')
+    carritoContenido.style.display = 'flex'
     const tuCarrito = document.createElement('div')
     tuCarrito.className = 'ver-carrito'
     tuCarrito.innerHTML = `
@@ -51,7 +51,7 @@ verCarrito.addEventListener('click', () => {
     boton.innerText = 'X'
     boton.className = 'cerrar'
     boton.addEventListener('click', () => {
-        carritoContenido.classList.add('ocultar')
+        carritoContenido.style.display = 'none'
     })
     tuCarrito.append(boton)
 
@@ -85,7 +85,7 @@ verCarrito.addEventListener('click', () => {
             confirmButtonText: 'Aceptar'
         })
         carrito.splice(0,carrito.length)
-        carritoContenido.classList.add('ocultar')
+        carritoContenido.style.display = 'none'
     }
     else{
         Swal.fire({

@@ -272,12 +272,6 @@ header .fa-bars{
     background: var(--pink);
 }
 
-.carrito{
-    display: flex;
-}
-.ocultar{
-    display: none;
-}
 
 
 
