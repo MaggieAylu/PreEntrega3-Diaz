@@ -71,6 +71,30 @@ verCarrito.addEventListener('click', () => {
    totalPagar.innerHTML = `Total: $${total}`
    carritoContenido.append(totalPagar)
    guardar()
+
+   const finalizarCompra = document.createElement('button')
+   finalizarCompra.className = 'cart-btn'
+   finalizarCompra.innerHTML = `Finalizar Compra`
+   carritoContenido.append(finalizarCompra)
+   finalizarCompra.addEventListener('click', () =>{
+    if(carrito.length > 0){
+        Swal.fire({
+            title: '¡Muchas Gracias!',
+            text: 'Su compra fue realizada con exito',
+            icon: 'success',
+            confirmButtonText: 'Aceptar'
+        })
+        carrito.splice(0,carrito.length)
+    }
+    else{
+        Swal.fire({
+            title: 'Opcion Invalida',
+            text: 'El carrito esta vacio',
+            icon: 'error',
+            confirmButtonText: 'Cerrar'
+        })
+    }
+   })
 })
 
 const guardar = () =>{
